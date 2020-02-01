@@ -1,0 +1,23 @@
+1. Install virtual studio
+2. Install live server , bracket pair,prettier code extensions in 	Virtual studio
+3. Install Nodejs LTS VERSION FOR WINDOWS/MAC (nodejs is required to convert sass file into css file
+4. Install git-bash for windows
+5. Install node-sass  for it we need to use npm , but before that     	we need to create package.jason file which is basically a manfest file for our project.To do this we use npm init.  For this wee need to go to the terminal window (from view tab on the top )or standard window terminal.
+
+6. run     npm init  press enter
+7. enter description , author name if you want and press enter after each entry.This gona create package.jason file
+
+8. If we install anything using npm its gonna install in this package.jason file
+
+9. Now install node-sass  file using command ( npm i node-sass ) in the terminal window. This will create a ew folder node-modules.
+
+10 Next step is to setup node-sass so that it works. For this go to package.jason file , then go to scripts object , in it change the name of "test" to something else , say "sass" and delete &&exit 1 and change the message in echo tag to a message of your choice and save the file
+
+11. now clear the terminal window using ctrl+l
+12. run npm script using  command ( npm run name of the script )
+	in our case the name is "sass"
+
+13. Now remove everything in between of double quotes of "sass" tag. and put  ( node-sass -w scss/ -o dist/css/ --recursive" )
+
+the meaning of this istruction is we are telling the compiler to run node-sass program , -w scss means watch scss folder , -o dist/css/ means output us css file in dist/css folder, --recursive is a keyword to prevent error with auto reload
+
