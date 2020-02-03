@@ -1,0 +1,59 @@
+
+// This is a partial file thats why we have started its name with   _      , so that compiler knows not to comile this in .css  
+// we just want to place our extra code variables,functions(mixins) in a separate file thts why we created it
+// we will import all its contents in our main.scss using @import statement
+
+
+$primary-color: #444;              // variable creation to store 1st color
+$secondary-color: #eece1a;           // variable creation to store 2nd color
+
+$show-home-image: true;
+$home-image: url(../img/background1.jpeg); //path of background image
+$background-opacity: 0.9;
+
+@mixin easeOut {                         //mixin is like function to perform a particular task in our css
+    transition: all 1.5s ease-out ;     // to introduce a transition time in changing some effect
+}
+
+@mixin background {                    //mixin or function to handle the background image
+      @if $show-home-image {            // here we are checking the condition using if
+         &#bg-img {                       //this id belongs to body tag
+             background: $home-image;       // assigning the value to background
+             background-attachment: fixed;  // to fix the position
+             background-size: cover;           // to cover the full screen
+
+      /*    
+        .overlay {                            //to design an overlay over the body/ background   ( but it requires overlay class in index.html file)
+                  position: absolute ;
+                  top: 0;
+                  right: 0;
+                  width: 100%;
+                  height: 100%;
+                  z-index: -1 ;   // tu push the overlay back of the text
+                  background: rgba($primary-color, $background-opacity);
+           }      
+           
+                 */
+
+
+
+           //instead of using the above overlay we can use pseudo element as follows //
+
+           &:after{                  //pseudo element creation
+
+            content: '';             // this actually inserts content before/after of the last element bg-img in this case
+            position: absolute ;     // here we are not putting any content but we are using it to implement our overlay data
+            top: 0;                  // assigning the origin of overlay
+            right: 0;                  // assigning the origin of overlay
+            width: 100%;
+            height: 100%;
+            z-index: -1 ;                   // to push the overlay back of the text
+            background: rgba($primary-color, $background-opacity);  // calling the rgba function passing 2 parameters
+
+           }
+            
+         } 
+          
+      }
+    
+}
