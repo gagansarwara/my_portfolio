@@ -1,0 +1,50 @@
+//menu button
+
+.menu-btn
+{
+    position: absolute;
+    z-index: 3;
+   left: 1400px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: white;
+        @include easeOut;
+    }
+
+    //Rotate menu button into X with Menu Lines
+     
+    &.close{                         //close class got added in menu-btn through java script menuBtn.classList.add('close'); command  
+        transform: rotate(180deg);  //to rotate button 18o deg
+        
+        .btn-line{
+            // Line 1 - rotate
+
+            &:nth-child(1) {   //pseudo element selector function
+               transform:rotate(45deg) translate(5px,5px) ;
+
+            }
+
+            // Line -2 Hide
+
+            &:nth-child(2) {   //pseudo element selector function
+                opacity: 0;
+ 
+             }
+
+            //Line-3 Rotate
+            &:nth-child(3) {   //pseudo element selector function
+                transform:rotate(-45deg) translate(7px,-6px) ;
+ 
+             }
+
+        }
+
+    }
+}
+
