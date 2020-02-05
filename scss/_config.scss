@@ -54,6 +54,34 @@ $background-opacity: 0.8;
             
          } 
           
-      }
-    
+      }  
 }
+
+// HERE WE ARE CREATING Media Query Mixins TO MAKE OUR WEBSITE CHANGE SIZE ACCORDING TO SCREEN SIZE
+@mixin mediaSm {    //for small screen
+      @media screen and (max-width: 500px){
+            @content;
+
+      }
+} 
+
+@mixin mediaMd {   //for medium screen
+      @media screen and (max-width: 768px){
+            @content;
+
+      }
+} 
+
+@mixin mediaLg {
+      @media screen and (min-width: 769px) and (max-width: 1170px){
+            @content;
+
+      }
+} 
+
+@mixin mediaXL {
+      @media screen and (min-width: 1171px) {
+            @content;
+
+      }
+} 

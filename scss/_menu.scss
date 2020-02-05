@@ -124,7 +124,7 @@
             transform: translate3d(0,0,0);
         }
 
-        &.current > a{
+        &.current > a{                     // Changing the color of HOME link to yellow permanently 
             color: $secondary-color;
         }
     
@@ -142,8 +142,8 @@
         text-decoration: none;
         @include easeOut;
 
-        &:hover {
-            color: $secondary-color;
+        &:hover {                           // changing the color on hovering the link
+            color: $secondary-color; 
         }
     }
 
