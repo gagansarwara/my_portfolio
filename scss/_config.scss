@@ -9,10 +9,10 @@ $secondary-color: #eece1a;           // variable creation to store 2nd color
 
 $show-home-image: true;
 $home-image: url(../img/background1.jpeg); //path of background image
-$background-opacity: 0.9;
+$background-opacity: 0.8;
 
 @mixin easeOut {                         //mixin is like function to perform a particular task in our css
-    transition: all 1.5s ease-out ;     // to introduce a transition time in changing some effect
+    transition: all 0.9s ease-out ;     // to introduce a transition time in changing some effect
 }
 
 @mixin background {                    //mixin or function to handle the background image
