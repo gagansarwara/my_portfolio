@@ -57,6 +57,24 @@ $background-opacity: 0.8;
       }  
 }
 
+// FUNCTION TO CHANGE TEXT COLOUR ACCORDING TO LIGHT/Dark background
+
+@function set-text-color($color)
+{
+      @if (lightness($color) > 40) 
+      {
+            @return #000;   //Black color     
+      }
+      @else
+      {
+            @return #fff; //White color
+      }
+
+}
+
+
+
+
 // HERE WE ARE CREATING Media Query Mixins TO MAKE OUR WEBSITE CHANGE SIZE ACCORDING TO SCREEN SIZE
 @mixin mediaSm {    //for small screen
       @media screen and (max-width: 500px){
